@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>bom</title>
+  </head>
+  <body>
+    <p><span id="count" style="position:absolute; font-size:50px;">5</span></p>
+    <p><span id="am" style="position:relative;"></span></p>
+    <p>
+      <span
+        id="fin"
+        style="position: absolute; top: 160px; left: 80px; width: 1000px; height: 240px; font-size: 100px; color: #FF0004"
+      ></span>
+    </p>
+    <script type="text/javascript">
+      var count = document.getElementById('count');
+      setInterval(function() {
+        count.innerHTML--;
+      }, 1000);
+
+      function bom() {
+        var gazo = document.getElementById('am');
+        gazo.innerHTML = '<img src="bom.gif" height="686" width="934" />';
+      }
+      setInterval(bom, 5000);
+
+      function otu() {
+        var target = document.getElementById('fin');
+        target.innerHTML = 'お疲れ様でした！';
+      }
+      setInterval(otu, 7500);
+
+      setTimeout(function() {
+        location.href = 'https://waic.jp/docs/UNDERSTANDING-WCAG20/time-limits-required-behaviors.html';
+      }, 9000);
+    </script>
+  </body>
+</html>
